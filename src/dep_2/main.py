@@ -1,8 +1,9 @@
+import click
 import sys
 
 
 def main():
-    print("Hello from dep-2")
+    print(f"Hello from dep-2 with click={click.__version__}")
 
 
 if __name__ == "__main__":
