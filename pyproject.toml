@@ -7,17 +7,13 @@ name = "dep-2"
 dynamic = ["version"]
 description = 'Dependecy lvl 2'
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = "MIT"
 keywords = []
-authors = [
-  { name = "Marcin r. Raba", email = "rabkins@me.com" },
-]
+authors = [{ name = "Marcin r. Raba", email = "rabkins@me.com" }]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
@@ -35,9 +31,7 @@ Source = "https://github.com/Marcin r. Raba/dep-2"
 path = "src/dep_2/__about__.py"
 
 [tool.hatch.envs.types]
-extra-dependencies = [
-  "mypy>=1.0.0",
-]
+extra-dependencies = ["mypy>=1.0.0"]
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:src/dep_2 tests}"
 
@@ -45,17 +39,11 @@ check = "mypy --install-types --non-interactive {args:src/dep_2 tests}"
 source_pkgs = ["dep_2", "tests"]
 branch = true
 parallel = true
-omit = [
-  "src/dep_2/__about__.py",
-]
+omit = ["src/dep_2/__about__.py"]
 
 [tool.coverage.paths]
 dep_2 = ["src/dep_2", "*/dep-2/src/dep_2"]
 tests = ["tests", "*/dep-2/tests"]
 
 [tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
